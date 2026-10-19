@@ -1,6 +1,7 @@
-# CodeAlpha_EventRegistrationSystem
+# Event Registration System
 
-Event Registration System built with Django + Django REST Framework (CodeAlpha Internship, Task 2).
+Event Registration System built with Django + Django REST Framework.
+
 
 ## Features
 - Django backend with token authentication
