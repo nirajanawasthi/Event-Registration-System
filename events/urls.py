@@ -1,3 +1,4 @@
+﻿from rest_framework.authtoken.views import ObtainAuthToken
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
 
@@ -7,7 +8,7 @@ urlpatterns = [
     path("", views.ApiRootView.as_view(), name="api-root"),
     # auth
     path("auth/signup/", views.SignupView.as_view(), name="signup"),
-    path("auth/login/", obtain_auth_token, name="login"),  # returns {"token": "..."}
+    path("auth/login/", ObtainAuthToken.as_view(authentication_classes=[]), name="login"),  # returns {"token": "..."}
 
     path("auth/me/", views.MeView.as_view(), name="me"),
 
@@ -22,3 +23,4 @@ urlpatterns = [
     path("registrations/<int:pk>/", views.RegistrationDetailView.as_view(), name="registration-detail"),
     path("registrations/<int:pk>/cancel/", views.CancelRegistrationView.as_view(), name="registration-cancel"),
 ]
+

@@ -1,11 +1,11 @@
-from django.contrib.auth.models import User
+﻿from django.contrib.auth.models import User
 from rest_framework import serializers
 
 from .models import Event, Registration
 
 
 class SignupSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, min_length=6)
+    password = serializers.CharField(write_only=True, min_length=5)
 
     class Meta:
         model = User
@@ -54,3 +54,4 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registration
         fields = ["full_name", "email", "phone"]
+
